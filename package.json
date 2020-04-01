@@ -3,7 +3,8 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "start": "wsrun --parallel start"
+    "start": "wsrun --parallel start",
+    "build": "wsrun --parallel build --report"
   },
   "workspaces": [
     "packages/*"
@@ -15,13 +16,15 @@
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
+    "minimist": "^1.2.5",
     "babel-loader": "^8.1.0",
-    "webpack-dev-server": "^3.10.3",
     "html-webpack-plugin": "^4.0.3",
     "vue-loader": "^15.9.1",
     "vue-template-compiler": "^2.6.11",
     "webpack": "git://github.com/webpack/webpack.git#dev-1",
     "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3",
+    "webpack-bundle-analyzer": "^3.6.1",
     "wsrun": "^5.2.0"
   }
 }

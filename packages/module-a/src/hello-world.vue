@@ -1,7 +1,7 @@
 <template>
 <div>
   <h1>hello, world</h1>
-  <div @click="addtTime">{{ index }} times</div>
+  <div @click="addCount">{{ count }} times</div>
 </div>
 </template>
 
@@ -9,7 +9,7 @@
 export default {
   data() {
     return {
-      index: 0
+      count: 0
     }
   },
 
@@ -17,8 +17,8 @@ export default {
     /**
      * 迭加次数
      */
-    addtTime() {
-      this.index += 1
+    addCount() {
+      this.count += 1
     }
   }
 }

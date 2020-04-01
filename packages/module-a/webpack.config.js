@@ -1,8 +1,10 @@
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const argv = require('minimist')(process.argv.slice(2))
 const VueLoader = require('vue-loader')
 const path = require('path')
 
-module.exports = {
+const webpackConf = {
 
   entry: "./src/index",
 
@@ -58,3 +60,13 @@ module.exports = {
     })
   ]
 }
+
+if (argv.report) {
+  webpackConf.plugins.push(
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static'
+    })
+  );
+}
+
+module.exports = webpackConf
